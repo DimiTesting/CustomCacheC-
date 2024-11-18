@@ -1,0 +1,15 @@
+C:\Users\amankeldi.kurban\Desktop\C#\CustomCache\bin\Debug\net8.0\CustomCache.exe
+C:\Users\amankeldi.kurban\Desktop\C#\CustomCache\bin\Debug\net8.0\CustomCache.deps.json
+C:\Users\amankeldi.kurban\Desktop\C#\CustomCache\bin\Debug\net8.0\CustomCache.runtimeconfig.json
+C:\Users\amankeldi.kurban\Desktop\C#\CustomCache\bin\Debug\net8.0\CustomCache.dll
+C:\Users\amankeldi.kurban\Desktop\C#\CustomCache\bin\Debug\net8.0\CustomCache.pdb
+C:\Users\amankeldi.kurban\Desktop\C#\CustomCache\obj\Debug\net8.0\CustomCache.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\amankeldi.kurban\Desktop\C#\CustomCache\obj\Debug\net8.0\CustomCache.AssemblyInfoInputs.cache
+C:\Users\amankeldi.kurban\Desktop\C#\CustomCache\obj\Debug\net8.0\CustomCache.AssemblyInfo.cs
+C:\Users\amankeldi.kurban\Desktop\C#\CustomCache\obj\Debug\net8.0\CustomCache.csproj.CoreCompileInputs.cache
+C:\Users\amankeldi.kurban\Desktop\C#\CustomCache\obj\Debug\net8.0\CustomCache.sourcelink.json
+C:\Users\amankeldi.kurban\Desktop\C#\CustomCache\obj\Debug\net8.0\CustomCache.dll
+C:\Users\amankeldi.kurban\Desktop\C#\CustomCache\obj\Debug\net8.0\refint\CustomCache.dll
+C:\Users\amankeldi.kurban\Desktop\C#\CustomCache\obj\Debug\net8.0\CustomCache.pdb
+C:\Users\amankeldi.kurban\Desktop\C#\CustomCache\obj\Debug\net8.0\CustomCache.genruntimeconfig.cache
+C:\Users\amankeldi.kurban\Desktop\C#\CustomCache\obj\Debug\net8.0\ref\CustomCache.dll
