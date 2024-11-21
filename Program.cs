@@ -5,8 +5,10 @@
         public static void Main(string[] args)
         {
             Console.WriteLine("Setting up the template");
-            Cache<string, string> customCache = new Cache<string, string>();
-            IDataDownloader dataDownloader = new SlowDataDownloader(customCache);
+            //Cache<string, string> customCache = new Cache<string, string>();
+            IDataDownloader dataDownloader = new CachingDataDownloader(
+                new PrintingDataDownloader(
+                    new SlowDataDownloader()));
             Console.WriteLine(dataDownloader.DownloadData("id1"));
             Console.WriteLine(dataDownloader.DownloadData("id2"));
             Console.WriteLine(dataDownloader.DownloadData("id3"));
@@ -22,18 +24,7 @@
 
     public class SlowDataDownloader : IDataDownloader
     {
-        private Cache<string, string> _customCache;
-
-        public SlowDataDownloader(Cache<string, string> customCache)
-        {
-            _customCache = customCache;
-        }
-
         public string DownloadData(string resourceId)
-        {
-            return _customCache.AddData(resourceId, DownloadDataWithoutCaching);
-        }
-        public string DownloadDataWithoutCaching(string resourceId)
         {
             Thread.Sleep(1000);
             return resourceId;
@@ -51,6 +42,35 @@
                 _cache[data] = DataLoader(data);
             } 
             return _cache[data];
+        }
+    }
+
+    public class CachingDataDownloader: IDataDownloader
+    {
+        private Cache<string, string> _cache = new();
+        private IDataDownloader _dataDownloader;
+        public CachingDataDownloader(IDataDownloader dataDownloader)
+        {
+            _dataDownloader = dataDownloader;
+        }
+        public string DownloadData(string resourceId)
+        {
+            return _cache.AddData(resourceId, _dataDownloader.DownloadData);
+        }
+    }
+
+    public class PrintingDataDownloader: IDataDownloader
+    {
+        private IDataDownloader _dataDownloader;
+        public PrintingDataDownloader(IDataDownloader dataDownloader)
+        {
+            _dataDownloader = dataDownloader;
+        }
+        public string DownloadData(string resourceId)
+        {
+            var data = _dataDownloader.DownloadData(resourceId);
+            Console.WriteLine($"Data is ready");
+            return data;
         }
     }
 }
